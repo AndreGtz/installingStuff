@@ -1,0 +1,17 @@
+First enable multilib
+uncomment [multilib] and Include=/etc/pacman.d/mirrorlist 
+
+install the libs for your graphic card in 32bits
+pacman -S xf86-video-ati lib32-mesa-libgl
+
+and the 32x sound
+pacman -S lib32-alsa-plugins
+
+the arial font
+pacman -S ttf-liberation
+
+then steam
+pacman -S steam
+
+Lastly you need to erase the libs that come with steam, because you already have them installed on a newer versions
+find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete
